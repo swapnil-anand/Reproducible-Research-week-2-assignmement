@@ -67,6 +67,7 @@ filled.data$day <- sapply(filled.data$date, FUN=weekday.or.weekend)
 
 
 ## ------------------------------------------------------------------------
+library(ggplot2)
 averages <- aggregate(steps ~ interval + day, data=filled.data, mean)
 
 ggplot(averages, aes(interval, steps, color = "red")) + geom_line() + facet_grid(day ~ .) +
